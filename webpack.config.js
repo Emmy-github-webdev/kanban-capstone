@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -17,6 +18,7 @@ module.exports = {
       title: 'Leaderboard',
       template: './src/index.html',
     }),
+    new CleanWebpackPlugin(),
   ],
   output: {
     filename: '[name].bundle.js',
@@ -29,6 +31,10 @@ module.exports = {
       {
         test: /\.css$/i,
         use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
     ],
   },

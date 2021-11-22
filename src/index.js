@@ -1,12 +1,5 @@
-import _ from 'lodash';
+import './styles.css';
+import Logo from './resources/meal-logo.png';
 
-function component() {
-  const element = document.createElement('div');
-
-  // Lodash, currently included via a script, is required for this line to work
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
-}
-
-document.body.appendChild(component());
+const logoLink = document.getElementById('logo');
+logoLink.src = Logo;
