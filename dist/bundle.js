@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-family:\n    'IBM Plex Mono',\n    -apple-system,\n    BlinkMacSystemFont,\n    'Segoe UI',\n    Roboto,\n    Oxygen,\n    Ubuntu,\n    Cantarell,\n    'Open Sans',\n    'Helvetica Neue',\n    sans-serif;\n  font-weight: 500;\n}\n\nh1 {\n  font-weight: 700;\n}\n\nh2 {\n  font-size: 1.5rem;\n}\n\n.buttonsize {\n  width: 20%;\n}\n\n#card {\n  border: 3px solid black;\n}\n\n.divider {\n  width: 4rem;\n  padding: 0.1rem 0;\n  background-color: black;\n  opacity: 100%;\n}\n\ndiv.card:nth-child(even) {\n  background-color: antiquewhite;\n}\n\ndiv.card:nth-child(odd) {\n  background-color: white;\n}\n\n.footer {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 60px; /* Set the fixed height of the footer here */\n  background-color: #f5f5f5;\n}\n\n.comment {\n  background-color: #d65108;\n  border-radius: 1rem;\n}\n\n.reserve {\n  background-color: #18a999;\n  border-radius: 1rem;\n}\n\n.nav-link {\n  font-size: 1.4rem;\n}\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAEA;EACE;;;;;;;;;;;cAWY;EACZ,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,uBAAuB;AACzB;;AAEA;EACE,WAAW;EACX,iBAAiB;EACjB,uBAAuB;EACvB,aAAa;AACf;;AAEA;EACE,8BAA8B;AAChC;;AAEA;EACE,uBAAuB;AACzB;;AAEA;EACE,kBAAkB;EAClB,SAAS;EACT,WAAW;EACX,YAAY,EAAE,4CAA4C;EAC1D,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;EACzB,mBAAmB;AACrB;;AAEA;EACE,yBAAyB;EACzB,mBAAmB;AACrB;;AAEA;EACE,iBAAiB;AACnB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');\n\nbody {\n  font-family:\n    'IBM Plex Mono',\n    -apple-system,\n    BlinkMacSystemFont,\n    'Segoe UI',\n    Roboto,\n    Oxygen,\n    Ubuntu,\n    Cantarell,\n    'Open Sans',\n    'Helvetica Neue',\n    sans-serif;\n  font-weight: 500;\n}\n\nh1 {\n  font-weight: 700;\n}\n\nh2 {\n  font-size: 1.5rem;\n}\n\n.buttonsize {\n  width: 20%;\n}\n\n#card {\n  border: 3px solid black;\n}\n\n.divider {\n  width: 4rem;\n  padding: 0.1rem 0;\n  background-color: black;\n  opacity: 100%;\n}\n\ndiv.card:nth-child(even) {\n  background-color: antiquewhite;\n}\n\ndiv.card:nth-child(odd) {\n  background-color: white;\n}\n\n.footer {\n  position: absolute;\n  bottom: 0;\n  width: 100%;\n  height: 60px; /* Set the fixed height of the footer here */\n  background-color: #f5f5f5;\n}\n\n.comment {\n  background-color: #d65108;\n  border-radius: 1rem;\n}\n\n.reserve {\n  background-color: #18a999;\n  border-radius: 1rem;\n}\n\n.nav-link {\n  font-size: 1.4rem;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  font-family:\n    'IBM Plex Mono',\n    -apple-system,\n    BlinkMacSystemFont,\n    'Segoe UI',\n    Roboto,\n    Oxygen,\n    Ubuntu,\n    Cantarell,\n    'Open Sans',\n    'Helvetica Neue',\n    sans-serif;\n  font-weight: 500;\n}\n\nh1 {\n  font-weight: 700;\n}\n\nh2 {\n  font-size: 1.5rem;\n}\n\n.buttonsize {\n  width: 20%;\n}\n\n#card {\n  border: 3px solid black;\n}\n\n.divider {\n  width: 4rem;\n  padding: 0.1rem 0;\n  background-color: black;\n  opacity: 100%;\n}\n\ndiv.card:nth-child(even) {\n  background-color: antiquewhite;\n}\n\ndiv.card:nth-child(odd) {\n  background-color: white;\n}\n\n.footer {\n  display: flex;\n  position: relative;\n  bottom: 0;\n  width: 100%;\n  height: 60px; /* Set the fixed height of the footer here */\n  background-color: #f5f5f5;\n}\n\n.comment {\n  background-color: #d65108;\n  border-radius: 1rem;\n}\n\n.reserve {\n  background-color: #18a999;\n  border-radius: 1rem;\n}\n\n.nav-link {\n  font-size: 1.4rem;\n}\n", "",{"version":3,"sources":["webpack://./src/styles.css"],"names":[],"mappings":"AAEA;EACE;;;;;;;;;;;cAWY;EACZ,gBAAgB;AAClB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,iBAAiB;AACnB;;AAEA;EACE,UAAU;AACZ;;AAEA;EACE,uBAAuB;AACzB;;AAEA;EACE,WAAW;EACX,iBAAiB;EACjB,uBAAuB;EACvB,aAAa;AACf;;AAEA;EACE,8BAA8B;AAChC;;AAEA;EACE,uBAAuB;AACzB;;AAEA;EACE,aAAa;EACb,kBAAkB;EAClB,SAAS;EACT,WAAW;EACX,YAAY,EAAE,4CAA4C;EAC1D,yBAAyB;AAC3B;;AAEA;EACE,yBAAyB;EACzB,mBAAmB;AACrB;;AAEA;EACE,yBAAyB;EACzB,mBAAmB;AACrB;;AAEA;EACE,iBAAiB;AACnB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');\n\nbody {\n  font-family:\n    'IBM Plex Mono',\n    -apple-system,\n    BlinkMacSystemFont,\n    'Segoe UI',\n    Roboto,\n    Oxygen,\n    Ubuntu,\n    Cantarell,\n    'Open Sans',\n    'Helvetica Neue',\n    sans-serif;\n  font-weight: 500;\n}\n\nh1 {\n  font-weight: 700;\n}\n\nh2 {\n  font-size: 1.5rem;\n}\n\n.buttonsize {\n  width: 20%;\n}\n\n#card {\n  border: 3px solid black;\n}\n\n.divider {\n  width: 4rem;\n  padding: 0.1rem 0;\n  background-color: black;\n  opacity: 100%;\n}\n\ndiv.card:nth-child(even) {\n  background-color: antiquewhite;\n}\n\ndiv.card:nth-child(odd) {\n  background-color: white;\n}\n\n.footer {\n  display: flex;\n  position: relative;\n  bottom: 0;\n  width: 100%;\n  height: 60px; /* Set the fixed height of the footer here */\n  background-color: #f5f5f5;\n}\n\n.comment {\n  background-color: #d65108;\n  border-radius: 1rem;\n}\n\n.reserve {\n  background-color: #18a999;\n  border-radius: 1rem;\n}\n\n.nav-link {\n  font-size: 1.4rem;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -531,6 +531,76 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./src/Meals.js":
+/*!**********************!*\
+  !*** ./src/Meals.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Meals)
+/* harmony export */ });
+class Meals {
+  static showDish = (meal) => {
+    const board = document.getElementById('board');
+    const dish = document.createElement('div');
+    dish.className = 'col-4 card d-flex align-content-around';
+    dish.innerHTML = `<img src=${meal.strMealThumb} alt="Apple Crumble">
+        <div class="d-flex align-baseline py-2">
+          <h2 class="col-9">${meal.strMeal}</h2>
+          <p class="col-3">Likes: 0</p>
+        </div>
+
+        <input type="submit" name="comments" id="${meal.idMeal}" value="Comments"
+          class="btn comment text-light btn-block my-2 ">
+        <input type="submit" name="reservations" id="reservation-0" value="Reservations"
+          class="btn reserve  text-light my-2 btn-block">
+    `;
+    board.appendChild(dish);
+  };
+
+  static showBoard = (list) => {
+    list.forEach((dish) => {
+      Meals.showDish(dish);
+    });
+  };
+}
+
+
+
+/***/ }),
+
+/***/ "./src/getMeals.js":
+/*!*************************!*\
+  !*** ./src/getMeals.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ getMeals)
+/* harmony export */ });
+/* harmony import */ var _Meals_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Meals.js */ "./src/Meals.js");
+
+
+const getMeals = async () => {
+  try {
+    return await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Japanese')
+      .then((response) => response.json())
+      .then((json) => {
+        _Meals_js__WEBPACK_IMPORTED_MODULE_0__["default"].showBoard(json.meals);
+      });
+  } catch (e) {
+    return null;
+  }
+};
+
+
+
+
+/***/ }),
+
 /***/ "./src/resources/meal-logo.png":
 /*!*************************************!*\
   !*** ./src/resources/meal-logo.png ***!
@@ -650,14 +720,18 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
 /* harmony import */ var _resources_meal_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./resources/meal-logo.png */ "./src/resources/meal-logo.png");
+/* harmony import */ var _getMeals_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getMeals.js */ "./src/getMeals.js");
+
 
 
 
 const logoLink = document.getElementById('logo');
 logoLink.src = _resources_meal_logo_png__WEBPACK_IMPORTED_MODULE_1__;
 
+document.addEventListener('DOMContentLoaded', (0,_getMeals_js__WEBPACK_IMPORTED_MODULE_2__["default"])());
+
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=index.bundle.js.map
+//# sourceMappingURL=bundle.js.map
