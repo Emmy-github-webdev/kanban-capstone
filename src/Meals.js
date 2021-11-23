@@ -3,7 +3,7 @@ class Meals {
     const board = document.getElementById('board');
     const dish = document.createElement('div');
     dish.className = 'col-4 card d-flex align-content-around';
-    dish.innerHTML = `<img src=${meal.strMealThumb} alt="Apple Crumble">
+    dish.innerHTML = `<img src=${meal.strMealThumb} alt="${meal.strMeal}">
         <div class="d-flex align-baseline py-2">
           <h2 class="col-9">${meal.strMeal}</h2>
           <p class="col-3">Likes: 0</p>
