@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+
+body {
+  font-family:
+    'IBM Plex Mono',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+.buttonsize {
+  width: 20%;
+}
+
+#card {
+  border: 3px solid black;
+}
+
+.divider {
+  width: 4rem;
+  padding: 0.1rem 0;
+  background-color: black;
+  opacity: 100%;
+}
+
+div.card:nth-child(even) {
+  background-color: antiquewhite;
+}
+
+div.card:nth-child(odd) {
+  background-color: white;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Set the fixed height of the footer here */
+  background-color: #f5f5f5;
+}
+
+.comment {
+  background-color: #d65108;
+  border-radius: 1rem;
+}
+
+.reserve {
+  background-color: #18a999;
+  border-radius: 1rem;
+}
+
+.nav-link {
+  font-size: 1.4rem;
+}
+
+/* meal details */
+.meal-details {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  color: #fff;
+  background: #d65108;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  width: 90%;
+  height: 90%;
+  overflow-y: scroll;
+
+  /* display: none; */
+  padding: 2rem 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.meal-details::-webkit-scrollbar {
+  width: 10px;
+}
+
+.meal-details::-webkit-scrollbar-thumb {
+  background: #f0f0f0;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
+.meal-details-content {
+  margin: 2rem;
+}
+
+.meal-details-content p:not(.recipe-category) {
+  padding: 1rem 0;
+}
+
+.recipe-close-btn {
+  position: absolute;
+  right: 2rem;
+  top: 2rem;
+  font-size: 1.8rem;
+  background: #fff;
+  border: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.9;
+}
+
+.recipe-title {
+  letter-spacing: 1px;
+  padding-bottom: 1rem;
+}
+
+.recipe-category {
+  background: #fff;
+  font-weight: 600;
+  color: #d65108;
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+
+.recipe-instruct {
+  padding: 1rem 0;
+}
+
+.recipe-meal-img img {
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.recipe-link {
+  margin: 1.4rem 0;
+}
+
+.recipe-link a {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: all 0.4s linear;
+  -webkit-transition: all 0.4s linear;
+  -moz-transition: all 0.4s linear;
+  -ms-transition: all 0.4s linear;
+  -o-transition: all 0.4s linear;
+}
+
+.recipe-link a:hover {
+  opacity: 0.8;
+}
+
+.showRecipe {
+  display: block;
+}
+
+.coments-list {
+  margin: 5px;
+  padding: 4px;
+}
+
+.coments-list:nth-child(even) {
+  background-color: #ae441f;
+  border-radius: 8px;
+}
+
+.coments-list:nth-child(odd) {
+  background-color: #983c1b;
+  border-radius: 8px;
+}
+
+#messageInput,
+#nameInput {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 3vh;
+}
+
+#submitButton {
+  padding: 5px 10px;
+  background-color: #fff;
+  border-radius: 3px;
+  font-size: 16px;
+  color: #000;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .meal-details {
+    width: 700px;
+  }
+}
