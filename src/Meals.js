@@ -2,7 +2,7 @@ class Meals {
   static showDish = (meal) => {
     const board = document.getElementById('board');
     const dish = document.createElement('div');
-    dish.className = 'col-4 card d-flex align-content-around';
+    dish.className = 'col-3 card d-flex align-content-around mx-4 my-3 p-4';
     dish.innerHTML = `<img src=${meal.strMealThumb} alt="${meal.strMeal}">
         <div class="d-flex align-baseline py-2">
           <h2 class="col-9">${meal.strMeal}</h2>
