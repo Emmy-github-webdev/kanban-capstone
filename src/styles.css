@@ -58,8 +58,10 @@ div:nth-child(odd) {
 
 .comment {
   background-color: #d65108;
+  border-radius: 1rem;
 }
 
 .reserve {
   background-color: #18a999;
+  border-radius: 1rem;
 }
