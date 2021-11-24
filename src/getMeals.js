@@ -22,4 +22,3 @@ const getMeals = async () => {
 };
 
 export default getMeals;
-

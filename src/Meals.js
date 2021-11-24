@@ -32,7 +32,6 @@ const mealDetailsContent = document.querySelector('.meal-details-content');
 const closeBtn = document.querySelector('.recipe-close-btn');
 
 const mealBoard = async (data) => {
-  
   for (let i = 0; i <= data.length - 1; i += 1) {
     const boardDiv = document.createElement('div');
     boardDiv.classList.add('meal-result');
@@ -46,7 +45,7 @@ const mealBoard = async (data) => {
     mealImage.classList.add('meal-img');
 
     const Image = document.createElement('img');
-    Image.classList.add('meal-img-img')
+    Image.classList.add('meal-img-img');
     Image.src = data[i].strMealThumb;
 
     mealImage.appendChild(Image);
@@ -84,10 +83,10 @@ const mealBoard = async (data) => {
     commentContainer.appendChild(button);
     listMeals.appendChild(commentContainer);
 
-    boardDiv.appendChild(listMeals)
+    boardDiv.appendChild(listMeals);
     board.appendChild(boardDiv);
   }
-}
+};
 
 /* Meal pop up modal */
 const mealPopUp = async (meal) => {
@@ -96,7 +95,7 @@ const mealPopUp = async (meal) => {
 
     <div class = "recipe-meal-img">
     <img src="${meal.strMealThumb}" alt="${meal.strMeal}>
-      <img src = "${meal.strMealThumb ? meal.strMealThumb : `https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg`}" alt = "food">
+      <img src = "${meal.strMealThumb ? meal.strMealThumb : 'https://www.themealdb.com/images/media/meals/wvpsxx1468256321.jpg'}" alt = "food">
     </div>
     <h2 class = "recipe-title">${meal.strMeal}</h2>
     <p class = "recipe-category">${meal.strCategory}</p>
@@ -122,7 +121,7 @@ const mealPopUp = async (meal) => {
   `;
 
   mealDetailsContent.parentElement.classList.add('displayComment');
-}
+};
 
 const getSingleMeal = async (e) => {
   e.preventDefault();
