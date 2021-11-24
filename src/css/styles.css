@@ -26,13 +26,14 @@ body{
 .text{
     opacity: 0.8;
 }
+
 .title{
     font-size: 2rem;
     margin-bottom: 1rem;
 }
 
 /*  */
-.container{
+.meal-container {
     min-height: 100vh;
 }
 .meal-wrapper{
@@ -44,6 +45,8 @@ body{
 }
 .meal-search{
     margin: 2rem 0;
+    text-align: center;
+    margin-top: 7.5vh;
 }
 .meal-search cite{
     font-size: 1rem;
