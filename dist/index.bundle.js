@@ -545,8 +545,8 @@ class Meals {
   static showDish = (meal) => {
     const board = document.getElementById('board');
     const dish = document.createElement('div');
-    dish.className = 'col-4 card d-flex align-content-around';
-    dish.innerHTML = `<img src=${meal.strMealThumb} alt="Apple Crumble">
+    dish.className = 'col-3 card d-flex align-content-around mx-4 my-3 p-4';
+    dish.innerHTML = `<img src=${meal.strMealThumb} alt="${meal.strMeal}">
         <div class="d-flex align-baseline py-2">
           <h2 class="col-9">${meal.strMeal}</h2>
           <p class="col-3">Likes: 0</p>
@@ -582,6 +582,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ getMeals)
 /* harmony export */ });
 /* harmony import */ var _Meals_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Meals.js */ "./src/Meals.js");
+/* harmony import */ var _mealCounter_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mealCounter.js */ "./src/mealCounter.js");
+
 
 
 const getMeals = async () => {
@@ -590,12 +592,32 @@ const getMeals = async () => {
       .then((response) => response.json())
       .then((json) => {
         _Meals_js__WEBPACK_IMPORTED_MODULE_0__["default"].showBoard(json.meals);
+        (0,_mealCounter_js__WEBPACK_IMPORTED_MODULE_1__["default"])(json.meals.length);
       });
   } catch (e) {
     return null;
   }
 };
 
+
+
+
+/***/ }),
+
+/***/ "./src/mealCounter.js":
+/*!****************************!*\
+  !*** ./src/mealCounter.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ mealCounter)
+/* harmony export */ });
+const mealCounter = (length) => {
+  const title = document.getElementById('meals');
+  title.innerHTML = `Meals (${length})`;
+};
 
 
 
@@ -734,4 +756,4 @@ document.addEventListener('DOMContentLoaded', (0,_getMeals_js__WEBPACK_IMPORTED_
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=index.bundle.js.map

@@ -1,4 +1,5 @@
 import Meals from './Meals.js';
+import mealCounter from './mealCounter.js';
 
 const getMeals = async () => {
   try {
@@ -6,6 +7,7 @@ const getMeals = async () => {
       .then((response) => response.json())
       .then((json) => {
         Meals.showBoard(json.meals);
+        mealCounter(json.meals.length);
       });
   } catch (e) {
     return null;
