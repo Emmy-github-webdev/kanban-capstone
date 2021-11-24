@@ -1,3 +1,4 @@
+import getLikes from './getLikes.js';
 import postLikes from './postLikes.js';
 
 class Meals {
@@ -8,7 +9,7 @@ class Meals {
     dish.innerHTML = `<img src=${meal.strMealThumb} alt="${meal.strMeal}">
         <div class="d-flex align-baseline justify-content-between py-2">
           <h2 class="col-9">${meal.strMeal}</h2>
-          <div class="col-2 text-decoration-none text-reset counter" id=${meal.idMeal}>&#10084;&#65039; 0</div>
+          <div class="col-3 text-decoration-none text-reset counter" id=${meal.idMeal}>&#10084;&#65039; 0</div>
         </div>
 
         <input type="submit" name="comments" id="${meal.idMeal}" value="Comments"
@@ -20,9 +21,6 @@ class Meals {
     document.getElementById(meal.idMeal).addEventListener('click', () => {
       Meals.getRecipe(meal.idMeal);
     });
-    // document.getElementById(`counter-${meal.idMeal}`).addEventListener('click', () => {
-    //   getLikes();
-    // });
   };
 
   static showBoard = (list) => {
@@ -33,6 +31,7 @@ class Meals {
     mealBoard.addEventListener('click', (e) => {
       if (e.target.classList.contains('counter')) {
         postLikes(e.target.id);
+        getLikes();
       }
     });
   };

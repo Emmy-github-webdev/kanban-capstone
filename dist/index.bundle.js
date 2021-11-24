@@ -541,7 +541,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Meals)
 /* harmony export */ });
-/* harmony import */ var _postLikes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./postLikes.js */ "./src/postLikes.js");
+/* harmony import */ var _getLikes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getLikes.js */ "./src/getLikes.js");
+/* harmony import */ var _postLikes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./postLikes.js */ "./src/postLikes.js");
+
 
 
 class Meals {
@@ -552,7 +554,7 @@ class Meals {
     dish.innerHTML = `<img src=${meal.strMealThumb} alt="${meal.strMeal}">
         <div class="d-flex align-baseline justify-content-between py-2">
           <h2 class="col-9">${meal.strMeal}</h2>
-          <div class="col-2 text-decoration-none text-reset counter" id=${meal.idMeal}>&#10084;&#65039; 0</div>
+          <div class="col-3 text-decoration-none text-reset counter" id=${meal.idMeal}>&#10084;&#65039; 0</div>
         </div>
 
         <input type="submit" name="comments" id="${meal.idMeal}" value="Comments"
@@ -564,9 +566,6 @@ class Meals {
     document.getElementById(meal.idMeal).addEventListener('click', () => {
       Meals.getRecipe(meal.idMeal);
     });
-    // document.getElementById(`counter-${meal.idMeal}`).addEventListener('click', () => {
-    //   getLikes();
-    // });
   };
 
   static showBoard = (list) => {
@@ -576,9 +575,8 @@ class Meals {
     });
     mealBoard.addEventListener('click', (e) => {
       if (e.target.classList.contains('counter')) {
-        (0,_postLikes_js__WEBPACK_IMPORTED_MODULE_0__["default"])(e.target.id);
-        // if (e.target.classList.contains('comment')) {
-        //   postLikes(e.id);
+        (0,_postLikes_js__WEBPACK_IMPORTED_MODULE_1__["default"])(e.target.id);
+        (0,_getLikes_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
       }
     });
   };
@@ -616,12 +614,24 @@ __webpack_require__.r(__webpack_exports__);
 
 const getLikes = async () => {
   try {
-    return await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/{{appID}}/likes')
+    const getMealId = async () => {
+      try {
+        return await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Japanese')
+          .then((response) => response.json())
+          .then((json) => json.meals.map((x) => x.idMeal));
+      } catch (e) {
+        return null;
+      }
+    };
+
+    const idList = await getMealId();
+    return await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/dEEfWPK6tiIeN8VkDbdX/likes')
       .then((response) => response.json())
       .then((json) => {
-        json.meals.forEach((meal) => {
-          // likeCounter(meal.id);
-          console.log(meal);
+        json.forEach((like) => {
+          if (idList.includes(like.item_id)) {
+            (0,_likeCounter_js__WEBPACK_IMPORTED_MODULE_0__["default"])(like);
+          }
         });
       });
   } catch (e) {
@@ -857,8 +867,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _resources_meal_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./resources/meal-logo.png */ "./src/resources/meal-logo.png");
 /* harmony import */ var _getMeals_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getMeals.js */ "./src/getMeals.js");
 /* harmony import */ var _getLikes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getLikes.js */ "./src/getLikes.js");
-/* harmony import */ var _postLikes_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./postLikes.js */ "./src/postLikes.js");
-
 
 
 
@@ -868,6 +876,7 @@ const logoLink = document.getElementById('logo');
 logoLink.src = _resources_meal_logo_png__WEBPACK_IMPORTED_MODULE_1__;
 
 document.addEventListener('DOMContentLoaded', (0,_getMeals_js__WEBPACK_IMPORTED_MODULE_2__["default"])());
+document.addEventListener('DOMContentLoaded', (0,_getLikes_js__WEBPACK_IMPORTED_MODULE_3__["default"])());
 
 })();
 
