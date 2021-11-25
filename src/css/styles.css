@@ -161,11 +161,10 @@ body {
 #list-comment {
   margin: 5px 2px;
   width: 90%;
-  
 }
 
 .comment-list {
- margin-bottom: 4px;
+  margin-bottom: 4px;
 }
 
 .comment-list:nth-child(even) {

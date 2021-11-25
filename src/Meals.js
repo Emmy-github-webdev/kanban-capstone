@@ -1,7 +1,7 @@
 import getLikes from './getLikes.js';
 import postLikes from './postLikes.js';
 import addComment from './addComment.js';
-import commentCounter from './commentCounter.js'
+import commentCounter from './commentCounter.js';
 
 const board = document.querySelector('#board');
 const mealDetailsContent = document.querySelector('.meal-details-content');
@@ -41,12 +41,12 @@ class Meals {
       }
     });
   };
-};
+}
 
 const getComment = async (item) => {
   const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/hM8vrlzdwqrlgb4w96Yn/comments?item_id=${item.idMeal}`;
-  let myComment = await fetch(url);
-  const data = await myComment.json();
+  const myComment = await fetch(url);
+  let data = await myComment.json();
   const ul = document.querySelector('#list-comment');
   ul.innerHTML = '';
   const h3 = document.querySelector('.comment-count');
@@ -62,7 +62,6 @@ const getComment = async (item) => {
     `;
   });
 };
-
 
 const mealPopUp = async (meal) => {
   [meal] = meal;
@@ -113,9 +112,9 @@ const mealPopUp = async (meal) => {
     document.querySelector('#commentator').value = '';
     document.querySelector('#comment').value = '';
     setTimeout(() => {
-        getComment(meal);
-    }, 1000);
       getComment(meal);
+    }, 1000);
+    getComment(meal);
   });
   getComment(meal);
 };

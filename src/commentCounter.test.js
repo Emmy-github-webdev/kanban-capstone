@@ -1,6 +1,5 @@
 import commentCounter from './commentCounter.js';
 
-
 describe('test comment count', () => {
   test('test number of comments from the Involvement API', () => {
     const comment = [
