@@ -1,5 +1,6 @@
 import getLikes from './getLikes.js';
 import postLikes from './postLikes.js';
+import addComment from './addComment.js';
 
 const board = document.querySelector('#board');
 const mealDetailsContent = document.querySelector('.meal-details-content');
@@ -73,6 +74,23 @@ const mealPopUp = async (meal) => {
   `;
 
   mealDetailsContent.parentElement.classList.add('displayComment');
+  const commentBtn = document.querySelector('.commentBtn');
+  commentBtn.addEventListener('click', () => {
+    const username = document.querySelector('#commentator').value;
+    const comment = document.querySelector('#comment').value;
+
+    const mealId = meal.idMeal;
+
+    const newComment = {
+      item_id: mealId,
+      username,
+      comment,
+    };
+    addComment(newComment);
+
+    document.querySelector('#commentator').value = '';
+    document.querySelector('#comment').value = '';
+  });
 };
 
 const getSingleMeal = async (e) => {
