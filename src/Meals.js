@@ -1,5 +1,6 @@
 import getLikes from './getLikes.js';
 import postLikes from './postLikes.js';
+import commentCounter from './commentCounter';
 
 const board = document.querySelector('#board');
 const mealDetailsContent = document.querySelector('.meal-details-content');
