@@ -27,6 +27,9 @@
 // }
 // export { Meals as default };
 
+/* eslint-disable no-await-in-loop */
+import addComment from './addComment.js';
+
 const board = document.querySelector('#board');
 const mealDetailsContent = document.querySelector('.meal-details-content');
 const closeBtn = document.querySelector('.recipe-close-btn');
@@ -121,6 +124,25 @@ const mealPopUp = async (meal) => {
   `;
 
   mealDetailsContent.parentElement.classList.add('displayComment');
+
+  const commentBtn = document.querySelector('.commentBtn');
+  commentBtn.addEventListener('click', () => {
+    const username = document.querySelector('#commentator').value;
+    const comment = document.querySelector('#comment').value;
+
+    const mealId = meal.idMeal;
+
+    const newComment = {
+      item_id: mealId,
+      username,
+      comment,
+    };
+    console.log(newComment);
+    // addComment(newComment);
+  
+    document.querySelector('#commentator').value = '';
+    document.querySelector('#comment').value = '';
+  });
 };
 
 const getSingleMeal = async (e) => {
