@@ -107,8 +107,8 @@ const mealPopUp = async (meal) => {
       username,
       comment,
     };
-    // addComment(newComment);
-    console.log(newComment)
+    addComment(newComment);
+    
 
     document.querySelector('#commentator').value = '';
     document.querySelector('#comment').value = '';
