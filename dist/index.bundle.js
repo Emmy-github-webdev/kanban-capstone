@@ -541,15 +541,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Meals)
 /* harmony export */ });
+/* harmony import */ var _getLikes_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getLikes.js */ "./src/getLikes.js");
+/* harmony import */ var _postLikes_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./postLikes.js */ "./src/postLikes.js");
+
+
+
 class Meals {
   static showDish = (meal) => {
     const board = document.getElementById('board');
     const dish = document.createElement('div');
-    dish.className = 'col-3 card d-flex align-content-around mx-4 my-3 p-4';
+    dish.className = 'col-3 card d-flex mx-4 my-3 p-4';
     dish.innerHTML = `<img src=${meal.strMealThumb} alt="${meal.strMeal}">
-        <div class="d-flex align-baseline py-2">
+        <div class="d-flex align-baseline justify-content-between py-2">
           <h2 class="col-9">${meal.strMeal}</h2>
-          <p class="col-3">Likes: 0</p>
+          <div class="col-3 text-decoration-none text-reset counter" id=${meal.idMeal}>&#10084;&#65039; 0</div>
         </div>
 
         <input type="submit" name="comments" id="${meal.idMeal}" value="Comments"
@@ -558,14 +563,81 @@ class Meals {
           class="btn reserve  text-light my-2 btn-block">
     `;
     board.appendChild(dish);
+    document.getElementById(meal.idMeal).addEventListener('click', () => {
+      Meals.getRecipe(meal.idMeal);
+    });
   };
 
   static showBoard = (list) => {
+    const mealBoard = document.getElementById('board');
     list.forEach((dish) => {
       Meals.showDish(dish);
     });
+    mealBoard.addEventListener('click', (e) => {
+      if (e.target.classList.contains('counter')) {
+        (0,_postLikes_js__WEBPACK_IMPORTED_MODULE_1__["default"])(e.target.id);
+        (0,_getLikes_js__WEBPACK_IMPORTED_MODULE_0__["default"])();
+      }
+    });
+  };
+
+  static getRecipe = async (id) => {
+    try {
+      return await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+        .then((response) => response.json())
+        .then((json) => {
+          console.log(json.meals);
+          // createModal(json.meals);
+        });
+    } catch (e) {
+      return null;
+    }
   };
 }
+
+
+
+/***/ }),
+
+/***/ "./src/getLikes.js":
+/*!*************************!*\
+  !*** ./src/getLikes.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ getLikes)
+/* harmony export */ });
+/* harmony import */ var _likeCounter_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./likeCounter.js */ "./src/likeCounter.js");
+
+
+const getLikes = async () => {
+  try {
+    const getMealId = async () => {
+      try {
+        return await fetch('https://www.themealdb.com/api/json/v1/1/filter.php?a=Japanese')
+          .then((response) => response.json())
+          .then((json) => json.meals.map((x) => x.idMeal));
+      } catch (e) {
+        return null;
+      }
+    };
+
+    const idList = await getMealId();
+    return await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/dEEfWPK6tiIeN8VkDbdX/likes')
+      .then((response) => response.json())
+      .then((json) => {
+        json.forEach((like) => {
+          if (idList.includes(like.item_id)) {
+            (0,_likeCounter_js__WEBPACK_IMPORTED_MODULE_0__["default"])(like);
+          }
+        });
+      });
+  } catch (e) {
+    return null;
+  }
+};
 
 
 
@@ -604,6 +676,25 @@ const getMeals = async () => {
 
 /***/ }),
 
+/***/ "./src/likeCounter.js":
+/*!****************************!*\
+  !*** ./src/likeCounter.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ likeCounter)
+/* harmony export */ });
+const likeCounter = (item) => {
+  const likes = document.getElementById(`${item.item_id}`);
+  likes.innerHTML = `&#10084;&#65039; (${item.likes})`;
+};
+
+
+
+/***/ }),
+
 /***/ "./src/mealCounter.js":
 /*!****************************!*\
   !*** ./src/mealCounter.js ***!
@@ -618,6 +709,38 @@ const mealCounter = (length) => {
   const title = document.getElementById('meals');
   title.innerHTML = `Meals (${length})`;
 };
+
+
+
+/***/ }),
+
+/***/ "./src/postLikes.js":
+/*!**************************!*\
+  !*** ./src/postLikes.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ postLikes)
+/* harmony export */ });
+const postLikes = async (id) => {
+  const newLike = { item_id: `${id}` };
+  try {
+    return await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/dEEfWPK6tiIeN8VkDbdX/likes', {
+      method: 'POST',
+      body: JSON.stringify(newLike),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => json);
+  } catch (e) {
+    return null;
+  }
+};
+
 
 
 
@@ -743,6 +866,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles.css */ "./src/styles.css");
 /* harmony import */ var _resources_meal_logo_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./resources/meal-logo.png */ "./src/resources/meal-logo.png");
 /* harmony import */ var _getMeals_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./getMeals.js */ "./src/getMeals.js");
+/* harmony import */ var _getLikes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./getLikes.js */ "./src/getLikes.js");
+
 
 
 
@@ -751,6 +876,7 @@ const logoLink = document.getElementById('logo');
 logoLink.src = _resources_meal_logo_png__WEBPACK_IMPORTED_MODULE_1__;
 
 document.addEventListener('DOMContentLoaded', (0,_getMeals_js__WEBPACK_IMPORTED_MODULE_2__["default"])());
+document.addEventListener('DOMContentLoaded', (0,_getLikes_js__WEBPACK_IMPORTED_MODULE_3__["default"])());
 
 })();
 
