@@ -158,19 +158,26 @@ body {
   opacity: 0.8;
 }
 
-.list-comment {
-  margin: 5px;
+#list-comment {
+  margin: 5px 2px;
+  width: 90%;
+  
+}
+
+.comment-list {
+ margin-bottom: 4px;
+}
+
+.comment-list:nth-child(even) {
+  background-color: #ae441f;
+  border-radius: 8px;
   padding: 4px;
 }
 
-.list-comment:nth-child(even) {
-  background-color: #ae441f;
-  border-radius: 8px;
-}
-
-.list-comment:nth-child(odd) {
+.comment-list:nth-child(odd) {
   background-color: #983c1b;
   border-radius: 8px;
+  padding: 4px;
 }
 
 #comment,
