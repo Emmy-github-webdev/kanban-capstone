@@ -1,5 +1,7 @@
 import getLikes from './getLikes.js';
 import postLikes from './postLikes.js';
+import addComment from './addComment.js';
+import commentCounter from './commentCounter.js';
 
 const board = document.querySelector('#board');
 const mealDetailsContent = document.querySelector('.meal-details-content');
@@ -41,6 +43,26 @@ class Meals {
   };
 }
 
+const getComment = async (item) => {
+  const url = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/hM8vrlzdwqrlgb4w96Yn/comments?item_id=${item.idMeal}`;
+  const myComment = await fetch(url);
+  let data = await myComment.json();
+  const ul = document.querySelector('#list-comment');
+  ul.innerHTML = '';
+  const h3 = document.querySelector('.comment-count');
+  h3.innerHTML = `Comments(${commentCounter(data)})`;
+  if (!data.length) data = [];
+  data.forEach((comment) => {
+    ul.innerHTML += `
+      <li class="comment-list d-flex justify-content-start align-items-center">
+        <p class="me-3">${comment.creation_date}</p>
+        <p class="me-3">${comment.username}</p>
+        <p>${comment.comment}</p>
+      </li>
+    `;
+  });
+};
+
 const mealPopUp = async (meal) => {
   [meal] = meal;
   mealDetailsContent.innerHTML = `
@@ -65,14 +87,36 @@ const mealPopUp = async (meal) => {
     </div>
     <h3 class="m-3">Add a comment</h3>
     <form autocomplete="off" class="form-class">
-      <input type="text" class="form-control" id="commentator" placeholder="Your name">
-      <textarea id="comment" name="comment" cols="30" rows="10" placeholder="Your comment..."></textarea>
+      <input type="text" class="form-control" id="commentator" required placeholder="Your name">
+      <textarea id="comment" name="comment" cols="30" rows="10" required placeholder="Your comment..."></textarea>
       <button type="button" class="btn commentBtn">Comment</button>
     </form>
 
   `;
 
   mealDetailsContent.parentElement.classList.add('displayComment');
+  const commentBtn = document.querySelector('.commentBtn');
+  commentBtn.addEventListener('click', () => {
+    const username = document.querySelector('#commentator').value;
+    const comment = document.querySelector('#comment').value;
+
+    const mealId = meal.idMeal;
+    if (username !== '' && comment !== '') {
+      const newComment = {
+        item_id: mealId,
+        username,
+        comment,
+      };
+      addComment(newComment);
+    } else alert('Empty fields are not allowed');
+    document.querySelector('#commentator').value = '';
+    document.querySelector('#comment').value = '';
+    setTimeout(() => {
+      getComment(meal);
+    }, 1000);
+    getComment(meal);
+  });
+  getComment(meal);
 };
 
 const getSingleMeal = async (e) => {
