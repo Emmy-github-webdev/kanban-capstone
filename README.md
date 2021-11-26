@@ -20,7 +20,7 @@ If you like what you see and have a project you need coded, don't hesitate to co
 
 # Presentation
 
-[Video](https://www.loom.com/share/8912312a029f453398a27e478ff1c18c).
+[Video](https://drive.google.com/file/d/13P58IxlnnbB4pzPj-iBUa0fo4ltbNxOu/view?usp=sharing).
 
 # Getting Started
 
