@@ -15,11 +15,11 @@ If you like what you see and have a project you need coded, don't hesitate to co
 
 # Live Demo
 
-[Live Demo Link]().
+[Live Demo Link](https://emmy-github-webdev.github.io/kanban-capstone/dist/).
 
 # Presentation
 
-[Video]().
+[Video](https://www.loom.com/share/8912312a029f453398a27e478ff1c18c).
 
 # Getting Started
 
