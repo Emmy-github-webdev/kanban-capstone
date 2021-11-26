@@ -101,14 +101,14 @@ const mealPopUp = async (meal) => {
     const comment = document.querySelector('#comment').value;
 
     const mealId = meal.idMeal;
-
-    const newComment = {
-      item_id: mealId,
-      username,
-      comment,
-    };
-    addComment(newComment);
-
+    if (username !== '' && comment !== '') {
+      const newComment = {
+        item_id: mealId,
+        username,
+        comment,
+      };
+      addComment(newComment);
+    } else alert('Empty fields are not allowed');
     document.querySelector('#commentator').value = '';
     document.querySelector('#comment').value = '';
     setTimeout(() => {
