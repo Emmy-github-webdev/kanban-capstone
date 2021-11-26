@@ -13,7 +13,7 @@ const getLikes = async () => {
     };
 
     const idList = await getMealId();
-    return await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/dEEfWPK6tiIeN8VkDbdX/likes')
+    return await fetch('https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/Js4xkj6ulHIn50hbAxjn/likes')
       .then((response) => response.json())
       .then((json) => {
         json.forEach((like) => {

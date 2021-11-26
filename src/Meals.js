@@ -11,7 +11,7 @@ class Meals {
   static showDish = (meal) => {
     const board = document.getElementById('board');
     const dish = document.createElement('div');
-    dish.className = 'col-3 card d-flex mx-4 my-3 p-4';
+    dish.className = 'col-md-4 col-sm-6 col-xs-6 card d-flex my-1 p-4';
     dish.innerHTML = `<img src=${meal.strMealThumb} alt="${meal.strMeal}">
         <div class="d-flex align-baseline justify-content-between py-2">
           <h2 class="col-9">${meal.strMeal}</h2>
@@ -37,7 +37,9 @@ class Meals {
     mealBoard.addEventListener('click', (e) => {
       if (e.target.classList.contains('counter')) {
         postLikes(e.target.id);
-        getLikes();
+        setTimeout(() => {
+          getLikes();
+        }, 1000);
       }
     });
   };
