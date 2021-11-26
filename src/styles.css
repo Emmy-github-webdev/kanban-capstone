@@ -73,3 +73,30 @@ div.card:nth-child(odd) {
 .counter {
   cursor: pointer;
 }
+
+#logo {
+  width: 20%;
+}
+
+footer {
+  margin-top: 3vh;
+}
+
+footer p {
+  text-align: center;
+  padding-top: 2vh;
+  font-size: 20px;
+}
+
+
+@media screen and (max-width: 500px) {
+  #logo {
+    width: 30%;
+  }
+
+  #meals,
+  #ingredients,
+  #about {
+    font-size: 15px;
+  }
+}
