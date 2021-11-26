@@ -7,7 +7,7 @@ If you like what you see and have a project you need coded, don't hesitate to co
 
 # Responsiveness
 
-![Kanban capstone Responsiveness]()
+![Kanban capstone](images/kanban.JPG)
 
 # Built With
 
