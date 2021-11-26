@@ -5,6 +5,10 @@ Kanban capstone is a JavaScript group project employing Kanban board
 
 If you like what you see and have a project you need coded, don't hesitate to contact me.
 
+# Responsiveness
+
+![Capstone Responsiveness](kanban.JPG)
+
 
 # Built With
 
@@ -15,7 +19,7 @@ If you like what you see and have a project you need coded, don't hesitate to co
 
 # Live Demo
 
-[Live Demo Link]().
+[Live Demo Link](https://emmy-github-webdev.github.io/kanban-capstone/dist/).
 
 # Presentation
 
