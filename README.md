@@ -6,11 +6,12 @@ Kanban capstone is a JavaScript group project employing Kanban board
 If you like what you see and have a project you need coded, don't hesitate to contact me.
 
 
+
 # Built With
 
 
 - Major languages: HTML, JavaScript, and CSS,
-- Technologies used: Web services, webpack, Jest for testing
+- Technologies used: Web services, webpack, Jest for testing, babelrc
 
 
 # Live Demo
