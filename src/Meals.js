@@ -37,7 +37,9 @@ class Meals {
     mealBoard.addEventListener('click', (e) => {
       if (e.target.classList.contains('counter')) {
         postLikes(e.target.id);
-        getLikes();
+        setTimeout(() => {
+          getLikes();
+        }, 1000);
       }
     });
   };

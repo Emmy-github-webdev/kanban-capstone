@@ -69,3 +69,7 @@ div.card:nth-child(odd) {
 .nav-link {
   font-size: 1.4rem;
 }
+
+.counter {
+  cursor: pointer;
+}
