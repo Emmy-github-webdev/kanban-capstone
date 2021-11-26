@@ -26,7 +26,7 @@ If you like what you see and have a project you need coded, don't hesitate to co
 
 To get a local copy up and running follow these simple example steps.
 
-## Prerequisites 
+## Prerequisites
 - A working Laptop or Desktop
 ## Setup
 - Install code editor
@@ -44,12 +44,17 @@ To get a local copy up and running follow these simple example steps.
 - Run npm run test for testing
 ## Deployment
 - Push the project to your GitHub repo
-- Navigate to page in the prject settings and publish 
+- Navigate to page in the prject settings and publish
 # Authors
-
-- GitHub: [Emmy-github-webdev](https://github.com/Emmy-github-webdev), [lu-jim](https://github.com/lu-jim)
+👤 **Emmanuel Oga**
+- GitHub: [Emmy-github-webdev](https://github.com/Emmy-github-webdev)
 - Twitter: [@ogaemmanuel](https://twitter.com/OgaemmanuelOga).
 - LinkedIn: [@ogaemmanuel](https://www.linkedin.com/in/emmanuel-oga-16171584/).
+
+👤 **Luis Fernando Jimenez**
+- GitHub: [@lu-jim](https://github.com/Emmy-github-webdev)
+- Twitter: [@lujimhe](https://twitter.com/OgaemmanuelOga).
+- LinkedIn: [@lujim](https://www.linkedin.com/in/emmanuel-oga-16171584/).
 
 # Contributing
 
